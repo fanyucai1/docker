@@ -6,6 +6,9 @@ https://hub.docker.com/r/fanyucai1/base
 
 ##   R(v3.6)
     /usr/bin/R
+    DESeq2
+    edgeR
+    clusterProfiler
 ##   java(v1.8.0_222)
     /usr/bin/java
 ##  python2(2.7.5)
