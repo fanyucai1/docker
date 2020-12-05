@@ -1,6 +1,6 @@
 #  base
 
-https://hub.docker.com/r/fanyucai1/base 
+https://hub.docker.com/repository/docker/fanyucai1/biobase
 
 #   software_list
 
