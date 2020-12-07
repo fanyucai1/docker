@@ -21,3 +21,8 @@ docker rmi -f 8f5116cbc201
 
 ####    停止正在运行的容器
 docker stop 3e42fb38f847
+
+# 当遇到如下错误‘No space left on device’可以尝试运行：
+
+    docker rm $(docker ps -q -f 'status=exited')
+    docker rmi $(docker images -q -f "dangling=true")
