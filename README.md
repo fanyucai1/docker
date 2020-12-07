@@ -10,19 +10,19 @@ https://hub.docker.com/r/fanyucai1/bio_tumor
 
 ####    停止所有容器
 
-    docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker stop
+docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker stop
 
 ####    删除所有容器
     
-    docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker rm
+docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker rm
 
 ####    删除所有none镜像
     
-    docker images|grep none|awk '{print $3 }'|xargs docker rmi
+docker images|grep none|awk '{print $3 }'|xargs docker rmi
 
 ####    强制删除镜像
     
-    docker rmi -f 8f5116cbc201
+docker rmi -f 8f5116cbc201
 
 ####    停止正在运行的容器
 
