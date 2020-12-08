@@ -1,5 +1,5 @@
 #   基础镜像
-https://hub.docker.com/r/fanyucai1/base 
+https://hub.docker.com/r/fanyucai1/biobase 
 
 #   生信肿瘤变异检测的软件环境
 https://hub.docker.com/r/fanyucai1/bio_tumor
