@@ -5,7 +5,6 @@ https://hub.docker.com/repository/docker/fanyucai1/biobase
 #   software_list
 
 ##   R(v3.6)
-    /usr/bin/R
     DESeq2
     edgeR
     clusterProfiler
