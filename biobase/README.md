@@ -8,6 +8,10 @@ https://hub.docker.com/repository/docker/fanyucai1/biobase
     DESeq2
     edgeR
     clusterProfiler
+    WGCAN
+    ggplot2
+    vegan
+    
 ##   java(v1.8.0_222)
     /usr/bin/java
 ##  python2(2.7.5)
