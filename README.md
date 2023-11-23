@@ -54,3 +54,36 @@ you can download:
 
       docker pull fanyucai1/base
 
+linux lib
+```{.cs}
+strace enscript curl wget swig bzip2 ghostscript autoconf automake cmake Cython \
+    glibc-devel zlib-devel python-devel libcurl libpng libcurl-devel bzip2-devel  \
+    libtool-ltdl libtool-ltdl-devel libxml2-devel pigz ncurses-devel libffi-devel libxslt-devel sqlite-devel tbb-devel audit audit-libs audit-libs-devel \
+    gcc-gfortran libicu-devel make openblas-devel pango pcre2-devel tcl tk unzip which zip \
+    perl-CPAN perl-IPC-Cmd perl-WWW-Curl java-11-openjdk java-11-openjdk-devel gcc gcc-c++ glibc-headers
+```
+
+/software/Python-v3.11.0/bin/python3
+```{.cs}
+tensorflow scikit-learn PyVCF RSeQC cutadapt tornado seaborn edlib CNVkit 
+PyYAML wheel parse2csv openpyxl pandas numpy configparser biopython 
+pysam matplotlib  Cython parse CrossMap cryptography easycython HTSeq 
+seaborn matplotlib pandas
+```
+
+R
+```{.cs}
+RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\"))" && \
+    Rscript -e "BiocManager::install(c(\"Rgraphviz\",\"SPIA\",\"hwriter\", \
+    \"hwriter\",\"pathview\",\"WGCNA\",\"DESeq2\",\"vegan\",\"edgeR\",\"clusterProfiler\", \
+    \"RCurl\",\"GSVA\",\"gage\",\"GenomicRanges\",\"GenomicAlignments\", \
+    \"biocGraph\",\"safe\",\"topGO\",\"ComplexHeatmap\",\"KEGGgraph\",\"EDASeq\",\"ReportingTools\"))"
+```
+
+bioinformatic
+```{.cs}
+/software/bwa/bwa
+/usr/bin/fastp
+/software/samtools-v1.18/bin/samtools
+/software/bcftools-v1.18/bin/bcftools
+```
