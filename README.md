@@ -46,7 +46,7 @@
 
 [base](https://hub.docker.com/repository/docker/fanyucai1/base/general)
 
-centos:7 java R=4.2.3 Python=v3.11.0 
+centos:7 java-11 R=4.2.3 Python=v3.11.0 
 
 [Dockerfile](base/Dockerfile)  
 
