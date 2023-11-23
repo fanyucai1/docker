@@ -56,10 +56,10 @@ you can download:
 
 linux lib
 ```{.cs}
-strace enscript curl wget swig bzip2 ghostscript autoconf automake cmake Cython \
-    glibc-devel zlib-devel python-devel libcurl libpng libcurl-devel bzip2-devel  \
-    libtool-ltdl libtool-ltdl-devel libxml2-devel pigz ncurses-devel libffi-devel libxslt-devel sqlite-devel tbb-devel audit audit-libs audit-libs-devel \
-    gcc-gfortran libicu-devel make openblas-devel pango pcre2-devel tcl tk unzip which zip \
+strace enscript curl wget swig bzip2 ghostscript autoconf automake cmake Cython
+    glibc-devel zlib-devel python-devel libcurl libpng libcurl-devel bzip2-devel
+    libtool-ltdl libtool-ltdl-devel libxml2-devel pigz ncurses-devel libffi-devel libxslt-devel sqlite-devel tbb-devel audit audit-libs audit-libs-devel
+    gcc-gfortran libicu-devel make openblas-devel pango pcre2-devel tcl tk unzip which zip
     perl-CPAN perl-IPC-Cmd perl-WWW-Curl java-11-openjdk java-11-openjdk-devel gcc gcc-c++ glibc-headers
 ```
 
@@ -73,11 +73,10 @@ seaborn matplotlib pandas
 
 R
 ```{.cs}
-RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\"))" && \
-    Rscript -e "BiocManager::install(c(\"Rgraphviz\",\"SPIA\",\"hwriter\", \
-    \"hwriter\",\"pathview\",\"WGCNA\",\"DESeq2\",\"vegan\",\"edgeR\",\"clusterProfiler\", \
-    \"RCurl\",\"GSVA\",\"gage\",\"GenomicRanges\",\"GenomicAlignments\", \
-    \"biocGraph\",\"safe\",\"topGO\",\"ComplexHeatmap\",\"KEGGgraph\",\"EDASeq\",\"ReportingTools\"))"
+BiocManager tidyverse Rgraphviz SPIA hwriter,
+    hwriter pathview WGCNA DESeq2 vegan edgeR clusterProfilerm
+    RCurl GSVA gage GenomicRanges GenomicAlignments
+    biocGraph safe topGO ComplexHeatmap KEGGgraph EDASeq ReportingTools
 ```
 
 bioinformatic
