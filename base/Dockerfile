@@ -32,7 +32,7 @@ RUN cd /software/ && wget https://cloud.r-project.org/src/base/R-4/R-4.2.3.tar.g
     tar xzvf R-4.2.3.tar.gz && cd R-4.2.3 && ./configure --enable-R-shlib --with-readline=no --with-x=no --enable-memory-profiling && make -j20 && make install &&  \
     echo "r <- getOption('repos'); r['CRAN'] <- 'https://cloud.r-project.org/'; options(repos = r);" > ~/.Rprofile
 
-RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\"))" && \
+RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\",\"sequenza\"))" && \
     Rscript -e "BiocManager::install(c(\"Rgraphviz\",\"SPIA\",\"hwriter\", \
     \"hwriter\",\"pathview\",\"WGCNA\",\"DESeq2\",\"vegan\",\"edgeR\",\"clusterProfiler\", \
     \"RCurl\",\"GSVA\",\"gage\",\"GenomicRanges\",\"GenomicAlignments\", \
@@ -54,5 +54,7 @@ RUN cd /software/ && wget https://github.com/samtools/bcftools/releases/download
     tar xjvf bcftools-1.18.tar.bz2 && cd bcftools-1.18 && ./configure --prefix=/software/bcftools-v1.18 && make -j20 && make install
 ###htslib####
 RUN cd /software/ && wget https://github.com/samtools/htslib/releases/download/1.18/htslib-1.18.tar.bz2 &&  \
-    tar xjvf htslib-1.18.tar.bz2 && cd htslib-1.18 && ./configure --prefix=/software/htslib-v1.18 && make -j20 && make install
+    tar xjvf htslib-1.18.tar.bz2 && cd htslib-1.18 && ./configure --prefix=/software/htslib-v1.18 && make -j20 && make install \
 
+###picard####
+wget mkdir -p /software/picard && cd /software/picard && wget https://github.com/broadinstitute/picard/releases/download/3.1.1/picard.jar && chmod 777 picard.jar \
