@@ -6,7 +6,7 @@ RUN yum install -y strace enscript curl wget swig bzip2 ghostscript autoconf aut
     gcc-gfortran libicu-devel make openblas-devel pango pcre2-devel tcl tk unzip which zip \
     perl-CPAN perl-IPC-Cmd perl-WWW-Curl java-11-openjdk java-11-openjdk-devel gcc gcc-c++ glibc-headers
 
-RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install -y python2-pip openssl-devel
+RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install -y python2-pip openssl-devel BEDTools
 
 #make directory
 RUN mkdir -p /raw_data/ /database/ /project/ /outdir/ /software/
@@ -16,6 +16,7 @@ RUN ln -s /software/openssl/bin/openssl /usr/bin/openssl
 RUN ln -s /software/openssl/include/openssl /usr/include/openssl
 RUN echo "/software/openssl/lib" >> /etc/ld.so.conf
 RUN ldconfig -v
+
 #Install python3
 RUN cd /software/ && wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz &&  \
     tar xvf Python-3.11.0.tgz && cd Python-3.11.0  \
@@ -38,23 +39,40 @@ RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\",\"sequenza\"))"
     \"RCurl\",\"GSVA\",\"gage\",\"GenomicRanges\",\"GenomicAlignments\", \
     \"biocGraph\",\"safe\",\"topGO\",\"ComplexHeatmap\",\"KEGGgraph\",\"EDASeq\",\"ReportingTools\"))"
 
-###bwa#######
-RUN yum install -y git && cd /software && git clone https://github.com/lh3/bwa.git && cd bwa && make
-###seqtk#######
-RUN cd /software && git clone https://github.com/lh3/seqtk.git && cd seqtk && make
-###fastp######
-RUN cd /usr/bin/ && wget http://opengene.org/fastp/fastp && chmod a+x ./fastp
-###picard######
-RUN cd /software/ && wget https://github.com/broadinstitute/picard/releases/download/3.1.1/picard.jar
-###samtools####
-RUN cd /software/ && wget https://github.com/samtools/samtools/releases/download/1.18/samtools-1.18.tar.bz2 &&  \
-    tar xjvf samtools-1.18.tar.bz2 && cd samtools-1.18 && ./configure --prefix=/software/samtools-v1.18 && make -j20 && make install
-###bcftools####
-RUN cd /software/ && wget https://github.com/samtools/bcftools/releases/download/1.18/bcftools-1.18.tar.bz2 &&  \
-    tar xjvf bcftools-1.18.tar.bz2 && cd bcftools-1.18 && ./configure --prefix=/software/bcftools-v1.18 && make -j20 && make install
-###htslib####
-RUN cd /software/ && wget https://github.com/samtools/htslib/releases/download/1.18/htslib-1.18.tar.bz2 &&  \
-    tar xjvf htslib-1.18.tar.bz2 && cd htslib-1.18 && ./configure --prefix=/software/htslib-v1.18 && make -j20 && make install \
+###bwa+seqtk#######
+RUN yum install -y git && cd /software && git clone https://github.com/lh3/bwa.git && cd bwa && make &&  \
+    cd /software && git clone https://github.com/lh3/seqtk.git && cd seqtk && make
 
-###picard####
-wget mkdir -p /software/picard && cd /software/picard && wget https://github.com/broadinstitute/picard/releases/download/3.1.1/picard.jar && chmod 777 picard.jar \
+###fastp+picard+varscan+MSIsensor-pro+abra2######
+RUN cd /usr/bin/ && wget http://opengene.org/fastp/fastp && chmod a+x ./fastp &&  \
+    wget https://github.com/broadinstitute/picard/releases/download/3.1.1/picard.jar && chmod 777 picard.jar &&  \
+    wget https://github.com/dkoboldt/varscan/releases/download/v2.4.6/VarScan.v2.4.6.jar && chmod 777 VarScan.v2.4.6.jar &&  \
+    wget https://github.com/xjtu-omics/msisensor-pro/raw/master/binary/msisensor-pro && chmod +x msisensor-pro && \
+    wget https://github.com/mozack/abra2/releases/download/v2.24/abra2-2.24.jar && chmod +x abra2-2.24.jar
+
+###samtools+bcftools+htslib####
+RUN cd /software/ && wget https://github.com/samtools/samtools/releases/download/1.18/samtools-1.18.tar.bz2 &&  \
+    tar xjvf samtools-1.18.tar.bz2 && cd samtools-1.18 && ./configure --prefix=/software/samtools-v1.18 && make -j20 && make install &&  \
+    cd /software/ && wget https://github.com/samtools/bcftools/releases/download/1.18/bcftools-1.18.tar.bz2 &&  \
+    tar xjvf bcftools-1.18.tar.bz2 && cd bcftools-1.18 && ./configure --prefix=/software/bcftools-v1.18 && make -j20 && make install &&  \
+    cd /software/ && wget https://github.com/samtools/htslib/releases/download/1.18/htslib-1.18.tar.bz2 &&  \
+    tar xjvf htslib-1.18.tar.bz2 && cd htslib-1.18 && ./configure --prefix=/software/htslib-v1.18 && make -j20 && make install &&  \
+    wget https://github.com/genome/pindel/archive/refs/tags/v0.2.5b8.tar.gz && cd pindel && ./INSTALL /opt/samtools-1.18/htslib-1.18/
+
+###VarDict+bedtools####
+RUN cd /software/ && wget https://github.com/AstraZeneca-NGS/VarDictJava/releases/download/v1.8.3/VarDict-1.8.3.tar && tar xvf VarDict-1.8.3.tar  \
+    && wget https://github.com/arq5x/bedtools2/releases/download/v2.31.1/bedtools-2.31.1.tar.gz && tar xjvf bedtools-2.31.1.tar.g && cd bedtools2 && make
+
+###Manta+strelka#####
+RUN cd /software/ && wget https://github.com/Illumina/manta/releases/download/v1.6.0/manta-1.6.0.release_src.tar.bz2 && tar -xjvf manta-1.6.0.release_src.tar.bz2 &&  \
+    mkdir build && cd build && ../manta-1.6.0.release_src/configure --jobs=20 --prefix=/software/manta-v1.6.0 && make -j20 install &&  \
+    wget https://github.com/Illumina/strelka/releases/download/v2.9.10/strelka-2.9.10.release_src.tar.bz2 && tar -xjvf strelka-2.9.10.release_src.tar.bz2 &&  \
+    mkdir build && cd build && ../strelka-2.9.10.release_src/configure --jobs=20 --prefix=/software/strelka-v2.9.10 && make -j20 install
+
+####GATK+rtg-tools#####
+RUN cd /software/ && wget https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.12.1/rtg-tools-3.12.1-linux-x64.zip && unzip rtg-tools-3.12.1-linux-x64.zip \
+    && wget https://github.com/broadinstitute/gatk/releases/download/4.4.0.0/gatk-4.4.0.0.zip && unzip gatk-4.4.0.0.zip
+
+##gcc=7.1+#### \
+RUN wget https://mirrors.ustc.edu.cn/gnu/gcc/gcc-7.1.0/gcc-7.1.0.tar.bz2 && tar xjvf gcc-7.1.0.tar.bz2 && \
+    wget https://github.com/wwylab/MuSE/archive/refs/tags/v2.0.4.zip && unzip  && cd MuSE && ./install_muse.sh
