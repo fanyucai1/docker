@@ -89,4 +89,4 @@ RUN cd /software/ && wget https://github.com/lh3/minimap2/releases/download/v2.2
     && wget https://github.com/genome/pindel/archive/refs/tags/v0.2.5b8.tar.gz && tar xzvf v0.2.5b8.tar.gz && cd pindel-0.2.5b8 && ./INSTALL /software/htslib-1.18/
 
 ###delete software
-RUN cd /software/ && rm -rf *.gz *.tgz *.bz2 *.zip Python-3.11.0 R-4.2.3 samtools-1.18 bcftools-1.18 htslib-1.18 gcc-7.1.0 openssl-1.1.1m build manta-1.6.0.release_src
+RUN cd /software/ && rm -rf *.gz *.tgz *.bz2 *.zip *.tar Python-3.11.0 R-4.2.3 samtools-1.18 bcftools-1.18 htslib-1.18 gcc-7.1.0 openssl-1.1.1m build manta-1.6.0.release_src
