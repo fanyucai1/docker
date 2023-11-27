@@ -32,13 +32,8 @@ RUN cd /software/ && wget https://cloud.r-project.org/src/base/R-4/R-4.2.3.tar.g
     tar xzvf R-4.2.3.tar.gz && cd R-4.2.3 && ./configure --enable-R-shlib --with-readline=no --with-x=no --enable-memory-profiling && make -j20 && make install &&  \
     echo "r <- getOption('repos'); r['CRAN'] <- 'https://cloud.r-project.org/'; options(repos = r);" > ~/.Rprofile
 
-RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\",\"sequenza\"))" && \
-    Rscript -e "BiocManager::install(c(\"Rgraphviz\",\"SPIA\",\"hwriter\", \
-    \"hwriter\",\"pathview\",\"WGCNA\",\"DESeq2\",\"vegan\",\"edgeR\",\"clusterProfiler\", \
-    \"RCurl\",\"GSVA\",\"gage\",\"GenomicRanges\",\"GenomicAlignments\", \
-    \"biocGraph\",\"safe\",\"topGO\",\"ComplexHeatmap\",\"KEGGgraph\",\"EDASeq\",\"ReportingTools\",\"DNAcopy\",\"NOISeq\"))"
+RUN Rscript -e "install.packages(c(\"BiocManager\",\"tidyverse\",\"sequenza\",\"DNAcopy\"))"
 
-###java####
 RUN cd /software/ && wget https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/17.0.9+9/openlogic-openjdk-jre-17.0.9+9-linux-x64.tar.gz && tar xzvf openlogic-openjdk-jre-17.0.9+9-linux-x64.tar.gz && \
     wget https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/8u392-b08/openlogic-openjdk-jre-8u392-b08-linux-x64.tar.gz && tar xzvf openlogic-openjdk-jre-8u392-b08-linux-x64.tar.gz
 
