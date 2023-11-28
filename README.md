@@ -120,10 +120,11 @@ BiocManager tidyverse Rgraphviz SPIA hwriter
 ```
 bioinformatic
 ```{.cs}
-/software/bwa/bwa
+/software/bwa-0.7.17/bwa
 /software/samtools-v1.18/bin/samtools
 /software/bcftools-v1.18/bin/bcftools
-/software/pindel-0.2.5b8/pindel
+sh -c "export LD_LIBRARY_PATH=/software/htslib-v1.18/lib:$LD_LIBRARY_PATH && /software/pindel-0.2.5b8/pindel"
+sh -c "export PATH=/software/gcc-v7.1.0/bin:$PATH && export LD_LIBRARY_PATH=//software/gcc-v7.1.0/lib64/:$LD_LIBRARY_PATH && /software/MuSE-2.0.4/MuSE"
 /software/seqtk/seqtk
 /software/bedtools2/bin/bedtools
 /software/strelka-v2.9.10/bin/configureStrelkaGermlineWorkflow.py
