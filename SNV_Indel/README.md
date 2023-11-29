@@ -17,11 +17,12 @@ R-4.2.3
 ```{.cs}
 /usr/local/bin/R
 ```
-openlogic-openjdk-jre-17.0.9+9-linux-x64
+
+java 17
 ```{.cs}
 /software/openlogic-openjdk-jre-17.0.9+9-linux-x64/bin/java
 ```
-openlogic-openjdk-jre-8u392-b08-linux-x64
+java 8
 ```{.cs}
 /software/openlogic-openjdk-jre-8u392-b08-linux-x64/bin/java
 ```
@@ -45,6 +46,7 @@ sh -c "export PATH=/software/gcc-v7.1.0/bin:$PATH && export LD_LIBRARY_PATH=//so
 /software/bedops/bin/bedops
 /software/gatk-4.4.0.0/gatk
 /usr/bin/fastp
+/usr/bin/genefuse
 /usr/bin/msisensor-pro
 /usr/bin/sambamba-1.0.1-linux-amd64-static
 /usr/bin/delly_v1.1.8_linux_x86_64bit
