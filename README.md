@@ -1,4 +1,7 @@
-1. 停止所有容器
+# My Docker Hub homepage:https://hub.docker.com/repositories/fanyucai1
+
+
+1.停止所有容器
 
         docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker stop
 2. 删除所有容器
