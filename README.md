@@ -40,7 +40,7 @@ The latest update was on February 21st, 2024.
 
       docker pull fanyucai1/base
 
-**software Details:**
+**Software Details:**
 
 ```{.cs}
 #linux lib
