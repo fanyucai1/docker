@@ -38,6 +38,10 @@ We strongly recommend that you use **base** to build your own Docker image.
 
 The latest update was on February 21st, 2024.
 
+**Download**:
+
+      docker pull fanyucai1/base
+
 **software Details:**
 
 ```{.cs}
@@ -70,10 +74,6 @@ The latest update was on February 21st, 2024.
 
 /software/Miniconda3/bin/conda
 ```
-
-**Download**:
-
-      docker pull fanyucai1/base
 
 
 
