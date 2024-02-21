@@ -34,7 +34,9 @@
 
 We strongly recommend that you use **[fanyucai1/base](https://hub.docker.com/repository/docker/fanyucai1/base/general)** to build your own Docker image.
 
-The latest update was on February 21st, 2024.
+The latest update was on **February 21st, 2024**.
+
+We also have provided some examples for building Docker images in folder **![demo](./demo)**, for reference only.
 
 **Download**:
 
