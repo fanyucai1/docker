@@ -30,8 +30,13 @@
     docker tag biobase fanyucai1/biobase
     docker push fanyucai1/biobase
 
-We strongly recommend that you use **base** to build your own Docker image,The latest update was on February 21st, 2024
-**My Docker Hub homepage**:https://hub.docker.com/repositories/fanyucai1
+## My Docker Hub homepage
+
+https://hub.docker.com/repositories/fanyucai1
+
+We strongly recommend that you use **base** to build your own Docker image.
+
+The latest update was on February 21st, 2024.
 
 [base:Dockerfile](Dockerfile)  
 
