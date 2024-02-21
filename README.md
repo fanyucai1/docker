@@ -30,32 +30,13 @@
     docker tag biobase fanyucai1/biobase
     docker push fanyucai1/biobase
 
-## example docker file:
+## We strongly recommend that you use base to build your own Docker image
 
-[Dockerfile](Dockerfile)  
+[base Dockerfile](Dockerfile)  
 
-## You can download my docker images: 
-
-[biobase](https://hub.docker.com/repository/docker/fanyucai1/biobase)
-
-[rna](https://hub.docker.com/repository/docker/fanyucai1/rna)
-
-[bio_tumor](https://hub.docker.com/repository/docker/fanyucai1/bio_tumor)
-
-## 2023.11 new docker base centos7 
-
-[base](https://hub.docker.com/repository/docker/fanyucai1/base/general)
-
-centos:7 java-11 R=4.2.3 Python=v3.11.0 
-
-[Dockerfile](base/Dockerfile)  
+centos:7 java-11 R=4.2.3 Python=v3.11.0 conda=23.11.0
 
 you can download:
 
       docker pull fanyucai1/base
 
-[SNV](https://hub.docker.com/repository/docker/fanyucai1/base/general)
-
-you can dowonload:
-
-      docker pull fanyucai1/snv
