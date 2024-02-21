@@ -41,43 +41,34 @@ docker pull fanyucai1/base
 
 /software/Miniconda3/bin/conda
 ```
-
-*The commonly used Docker analysis commands are as follows::*
-
-**停止所有容器**
+**The commonly used Docker analysis commands are as follows**
 ```{.cs}
+# 停止所有容器
 docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker stop
-```
-**删除所有容器**
-```{.cs}
+
+# 删除所有容器
 docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker rm
-```
-**删除所有none镜像**
-```{.cs}
+
+# 删除所有none镜像
 docker images|grep none|awk '{print $3 }'|xargs docker rmi
-```
-**强制删除镜像**
-```{.cs}
+
+# 强制删除镜像
 docker rmi -f 8f5116cbc201
-```
-**停止正在运行的容器**
-```{.cs}
+
+# 停止正在运行的容器
 docker stop 3e42fb38f847
-```
-**No space left on device**
-```{.cs}
+
+# No space left on device**
 docker rm $(docker ps -q -f 'status=exited')
 docker rmi $(docker images -q -f "dangling=true")
-```
-**镜像保存与加载**
-```{.cs}
-    docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3
-    docker load --input my_ubuntu_v3.tar
-```
-**镜像上传dockerhub**
-```{.cs}
-    docker login -u fanyucai
-    docker tag biobase fanyucai1/biobase
-    docker push fanyucai1/biobase
+
+# 镜像保存与加载
+docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3
+docker load --input my_ubuntu_v3.tar
+
+# 镜像上传docker hub
+docker login -u fanyucai
+docker tag biobase fanyucai1/biobase
+docker push fanyucai1/biobase
 ```
 

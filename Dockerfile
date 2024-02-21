@@ -35,4 +35,4 @@ RUN cd /software/ && wget --no-check-certificate https://mirrors.tuna.tsinghua.e
     bash Miniconda3-latest-Linux-x86_64.sh -bfp /software/Miniconda3
 
 ###delete software
-RUN cd /software/ && rm -rf *.gz *.tgz *.bz2 *.zip Python-3.11.0 R-4.2.3 openssl-1.1.1m
+RUN cd /software/ && rm -rf *.gz *.tgz *.bz2 *.zip Python-3.11.0 R-4.2.3 openssl-1.1.1m Miniconda3-latest-Linux-x86_64.sh
