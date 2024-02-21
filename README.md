@@ -1,8 +1,3 @@
-# My Docker Hub homepage
-
-https://hub.docker.com/repositories/fanyucai1
-
-
 1.停止所有容器
 
         docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker stop
@@ -35,9 +30,8 @@ https://hub.docker.com/repositories/fanyucai1
     docker tag biobase fanyucai1/biobase
     docker push fanyucai1/biobase
 
-## We strongly recommend that you use base to build your own Docker image
-
-**The latest update was on February 21st, 2024**
+We strongly recommend that you use **base** to build your own Docker image,The latest update was on February 21st, 2024
+**My Docker Hub homepage**:https://hub.docker.com/repositories/fanyucai1
 
 [base:Dockerfile](Dockerfile)  
 
@@ -46,4 +40,6 @@ centos:7 java-11 R=4.2.3 Python=v3.11.0 conda=23.11.0
 you can download:
 
       docker pull fanyucai1/base
+
+
 
