@@ -38,9 +38,32 @@ We strongly recommend that you use **base** to build your own Docker image.
 
 The latest update was on February 21st, 2024.
 
-[base:Dockerfile](Dockerfile)  
+[base:Dockerfile](Dockerfile)
 
-centos:7 java-11 R=4.2.3 Python=v3.11.0 conda=23.11.0
+Details:
+
+python-3.11.0
+```{.cs}
+/software/Python-v3.11.0/bin/python3
+```
+
+R-4.2.3
+```{.cs}
+/usr/local/bin/R
+```
+openlogic-openjdk-jre-17.0.9+9-linux-x64
+```{.cs}
+/software/openlogic-openjdk-jre-17.0.9+9-linux-x64/bin/java
+```
+openlogic-openjdk-jre-8u392-b08-linux-x64
+```{.cs}
+/software/openlogic-openjdk-jre-8u392-b08-linux-x64/bin/java
+```
+
+conda 23.11.0
+```{.cs}
+/software/Miniconda3/bin/conda
+```
 
 you can download:
 
