@@ -32,6 +32,8 @@
 
 ## We strongly recommend that you use base to build your own Docker image
 
+**The latest update was on February 21st, 2024**
+
 [base:Dockerfile](Dockerfile)  
 
 centos:7 java-11 R=4.2.3 Python=v3.11.0 conda=23.11.0
