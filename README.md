@@ -1,6 +1,6 @@
 # [My Docker Hub homepage](https://hub.docker.com/repositories/fanyucai1)
 
-   We strongly recommend that you use **[fanyucai1/base](https://hub.docker.com/repository/docker/fanyucai1/base/general)** to build your own Docker image.
+   We strongly recommend that you use **fanyucai1/base** to build your own Docker image.
    
    The latest update was on **February 21st, 2024**.
    
