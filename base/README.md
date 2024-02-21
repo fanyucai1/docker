@@ -31,3 +31,5 @@ openlogic-openjdk-jre-8u392-b08-linux-x64
 ```{.cs}
 /software/openlogic-openjdk-jre-8u392-b08-linux-x64/bin/java
 ```
+
+conda
