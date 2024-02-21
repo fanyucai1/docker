@@ -36,7 +36,7 @@ We strongly recommend that you use **[fanyucai1/base](https://hub.docker.com/rep
 
 The latest update was on **February 21st, 2024**.
 
-We also have provided some examples for building Docker images in folder **![demo](./demo)**, for reference only.
+We also have provided some examples for building Docker images in **demo folder**, for reference only.
 
 **Download**:
 
