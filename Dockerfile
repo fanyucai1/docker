@@ -31,8 +31,8 @@ RUN cd /software/ && wget https://builds.openlogic.com/downloadJDK/openlogic-ope
     wget https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/8u392-b08/openlogic-openjdk-jre-8u392-b08-linux-x64.tar.gz && tar xzvf openlogic-openjdk-jre-8u392-b08-linux-x64.tar.gz
 
 ###Miniconda3####
-RUN cd /software/ && wget --no-check-certificate https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh &&  \
-    bash Miniconda3-latest-Linux-x86_64.sh -bfp /software/Miniconda3
+RUN cd /software/ && wget --no-check-certificate https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py37_23.1.0-1-Linux-x86_64.sh &&  \
+    bash Miniconda3-py37_23.1.0-1-Linux-x86_64.sh -bfp /software/Miniconda3 && rm Miniconda3-py37_23.1.0-1-Linux-x86_64.sh
 
 ###delete software
-RUN cd /software/ && rm -rf *.gz *.tgz *.bz2 *.zip Python-3.11.0 R-4.2.3 openssl-1.1.1m Miniconda3-latest-Linux-x86_64.sh
+RUN cd /software/ && rm -rf *.gz *.tgz *.bz2 *.zip Python-3.11.0 R-4.2.3 openssl-1.1.1m
