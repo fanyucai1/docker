@@ -37,7 +37,7 @@ docker pull fanyucai1/base
 
 /software/openlogic-openjdk-jre-8u392-b08-linux-x64/bin/java
 
-# Miniconda3-py37_23.1.0
+# Miniconda3 conda 24.1.2
 
 /software/Miniconda3/bin/conda
 ```
