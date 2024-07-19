@@ -6,6 +6,7 @@ Based on Alpine, we have built a base image that includes Alpine, glibc, and Bio
 On this foundation, we have constructed the metagenomic analysis image "meta" and the "covid" image, which can be used for COVIDSeq analysis.
 
 Additionally, the original images on Docker Hub are still available. Currently, we only provide Dockerfile files for the latest developer images.
+
 **The commonly used Docker analysis commands are as follows**
 ```{.cs}
 # 停止所有容器
