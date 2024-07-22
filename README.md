@@ -1,9 +1,9 @@
 # [My Docker Hub homepage](https://hub.docker.com/repositories/fanyucai1)
 
 Unlike the 1.0 version of the bioinformatics software images, which were mostly CentOS 7, the current developer versions are based on the original Alpine image. 
-Using Alpine can effectively reduce the file size of Docker images. 
-Based on Alpine, we have built a base image that includes Alpine, glibc, and Bioconda. 
-On this foundation, we have constructed the metagenomic analysis image "meta" and the "covid" image, which can be used for COVIDSeq analysis.
+Using **Alpine** can effectively reduce the file size of Docker images. 
+Based on Alpine, we have built a base image that includes **Alpine, glibc, and Bioconda** 
+On this foundation, we have constructed the metagenomic analysis image **"meta"** and the **"covid"** image, which can be used for COVIDSeq analysis.
 
 Additionally, the original images on Docker Hub are still available. Currently, we only provide Dockerfile files for the latest developer images.
 
