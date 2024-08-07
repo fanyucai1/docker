@@ -32,9 +32,6 @@ docker rmi $(docker images -q -f "dangling=true")
 docker save -o my_ubuntu_v3.tar runoob/ubuntu:v3
 docker load --input my_ubuntu_v3.tar
 
-# 清除缓存
-docker system prune -a --force
-
 # 镜像上传docker hub
 docker login -u fanyucai
 docker tag biobase fanyucai1/biobase
